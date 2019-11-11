@@ -1,0 +1,155 @@
+<div class="container">
+
+    {{!-- navbar with home icon, etc. --}}
+    {{!-- appointa image --}}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="/img/logopic.png" alt="logo">
+        </div>
+    </div>
+
+    {{!-- appointment request form --}}
+
+
+    <div class="container">
+
+        <div class="row row-control">
+            <div class="col-md-12 d-flex justify-content-center">
+                <h3 class="title-control text-center"> Create Appointment</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/patient/form"><button class="btn btn-primary button button-control"><span><i
+                                class="far fa-calendar-plus"></i></span>
+                        Appointment</button></a>
+            </div>
+            <div class="col-md-4">
+                <a href="/patient/appts/:id"><button class="btn btn-primary button button-control"><span><i
+                                class="fas fa-eye"></i></span> Appointment</button></a>
+            </div>
+            <div class="col-md-4">
+                <a href="/patient/:id"><button class="btn btn-primary button button-control"><span><i
+                                class="fas fa-user">
+                            </i></span> Profile</button></a>
+            </div>
+        </div>
+
+        <section id="section-b" class="form-style">
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="appt-firstname">
+                    <label for="name" class="label-name"><span class="content-text">First Name</span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="appt-lastname">
+                    <label for="name" class="label-name"><span class="content-text">Last name</span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="visit-purpose">
+                    <label for="name" class="label-name"><span class="content-text">Reason for your visit</span>
+                    </label>
+                </div>
+            </form>
+
+
+            <div class="form col-xs-12">
+
+                <label for="select-doctor">Select a doctor</label>
+                <select class="form-control" id="select-doctor">
+                    {{#each doctors}}
+                        <option class="doctor-id" data-id="{{this.id}}">{{this.fullname}} ({{this.discipline}})
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="date" name="name" autocomplete="off" required id="appt-date">
+                    <label for="name" class="label-name"><span class="content-text"></span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+                    <span><i class="fas fa-clock icon-control"></i></span>
+                    <input type="time" id="appt-time" class="timepicker">
+                    <label for="time">Set time</label>
+
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="appt-email">
+                    <label for="name" class="label-name"><span class="content-text">Email</span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="appt-phone">
+                    <label for="name" class="label-name"><span class="content-text">phone</span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="insurance-provider">
+                    <label for="name" class="label-name"><span class="content-text">Insurance</span>
+                    </label>
+                </div>
+            </form>
+
+            <form>
+                <div class="form col-xs-12">
+
+                    <span><i class="fas fa-user icon-control"></i></span>
+                    <input type="text" name="name" autocomplete="off" required id="group-id">
+                    <label for="name" class="label-name"><span class="content-text">Insurance Group ID</span>
+                    </label>
+                </div>
+            </form>
+
+            <div class="row d-flex justify-content-center">
+                <button type="submit" action="POST" id="submit-appt"
+                    class="btn btn-primary float-right button button-control">Submit</button>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- Compiled and minified CSS -->
